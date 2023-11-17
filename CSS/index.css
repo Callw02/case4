@@ -1,9 +1,10 @@
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-main{
+
+main {
     height: 500px;
     width: 300px;
     display: flex;
@@ -12,7 +13,8 @@ main{
     border: 1px solid black;
     flex-direction: column;
 }
-.box{
+
+.box {
     display: flex;
     justify-content: center;
     align-items: center;

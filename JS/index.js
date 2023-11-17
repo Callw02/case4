@@ -1,7 +1,7 @@
 document.getElementById("login").addEventListener("click", loginFunction);
 document.getElementById("register").addEventListener("click", registerFunction);
 
-function loginFunction(event){
+function loginFunction(event) {
     let username = document.getElementById("loginUsername").value;
     let password = document.getElementById("registerPassword").value;
     console.log(username);
@@ -14,7 +14,7 @@ function loginFunction(event){
 
 }
 
-function registerFunction(event){
+function registerFunction(event) {
     let username = document.getElementById("registerUsername").value;
     let password = document.getElementById("registerPassword").value;
 
