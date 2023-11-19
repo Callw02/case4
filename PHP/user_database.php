@@ -16,7 +16,7 @@ $action = $received_data["action"];
 $username = $received_data["username"];
 $password = $received_data["password"];
 
-$filename = "../DATA/users.json";
+$filename = __DIR__."/../DATA/users.json";
 
 if (file_exists($filename)) {
     $users = json_decode(file_get_contents($filename), true);
