@@ -9,5 +9,5 @@ SignIn.addEventListener("click", function (event) {
 //När man klickar på sign up så kommer man till sidan där man registrerar sig. 
 let SignUp = document.getElementById("SignUp");
 SignUp.addEventListener("click", function (event) {
-
+    window.location.href = "./login.html";
 })
