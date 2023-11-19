@@ -10,8 +10,14 @@ function loginFunction(event) {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: username, password: password, action: "login" })
+    }).then(request => request.json()).then(resource => {
+        if(resource.message === "Login successful!"){
+            window.location.href = "../homepage.html"
+        }else{
+            console.log("login failed");
+        }
     });
-
+    
 }
 
 function registerFunction(event) {
