@@ -33,6 +33,8 @@ function signUppage(event) {
 </main>
     `
     document.getElementById("register").addEventListener("click", registerFunction);
+
+    //Shortcut from register page to login page. 
     document.getElementById("loginShortCut").addEventListener("click", signInpage);
 }
 
@@ -48,11 +50,29 @@ function loginFunction(event) {
     }).then(request => request.json()).then(resource => {
         if (resource.message === "Login successful!") {
             console.log("sucess");
+            RenderStartingpage();
         } else {
             console.log("login failed");
         }
     });
 
+}
+
+function RenderStartingpage() {
+    document.querySelector("main").innerHTML = `
+    <main>
+    <header id="menu">
+        <div id="profile">
+            <div id="profilePic"></div>
+            <p>TheMovieStar</p>
+        </div>
+        <div id="containerLogo">
+            <div class="unknown"></div>
+            <div class="unknown"></div>
+        </div>
+    </header>
+</main>
+    `
 }
 
 function registerFunction(event) {
