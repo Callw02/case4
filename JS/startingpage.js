@@ -64,6 +64,11 @@ function displayFriendRequests(){
         body: JSON.stringify({ username: username, action: "displayFriends"})
     }).then(r => r.json()).then(resource => {
         console.log(resource);
+        for(let i = 0; i < resource.friendRequests.length;i++){
+            let div = document.createElement("div");
+            div.textContent = resource.friendRequests[i];
+            requestBox.appendChild(div);
+        }
     })
     
 }

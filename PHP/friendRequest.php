@@ -21,7 +21,7 @@ $users = json_decode(file_get_contents($filename), true);
 if($action === "searchForUser"){
     foreach($users as &$user){
         if($user["username"] === $userRequest){
-            $user["friendRequests"] = $username;
+            $user["friendRequests"][] = $username;
         }
     }
     file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
