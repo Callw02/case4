@@ -22,5 +22,13 @@
         "popcorn": 0,
         "friends": 0,
         "id": 3
+    },
+    {
+        "username": "WWW",
+        "password": "www",
+        "level": 1,
+        "popcorn": 0,
+        "friends": 0,
+        "id": 4
     }
 ]
