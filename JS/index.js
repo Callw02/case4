@@ -1,5 +1,38 @@
-document.getElementById("logister").addEventListener("click", loginFunction);
-document.getElementById("register").addEventListener("click", registerFunction);
+document.getElementById("SignIn").addEventListener("click", signInpage);
+document.getElementById("SignUp").addEventListener("click", signUppage);
+
+function signInpage(event){
+    document.querySelector("main").innerHTML = `
+    <main>
+        <h1>Filmfeud</h1>
+        <div>
+            <div class="box">
+                <button id="login">Login</button>
+                <input placeholder="Username" id="loginUsername"></input>
+                <input placeholder="Password" id="loginPassword"></input>
+            </div>
+        </div>
+    </main>
+    `
+    document.getElementById("login").addEventListener("click", loginFunction);
+
+}
+
+function signUppage(event){
+    document.querySelector("main").innerHTML = `
+    <main>
+    <h1>Filmfeud</h1>
+    <div>
+        <div class="box">
+            <button id="register">Register</button>
+            <input placeholder="Username" id="registerUsername"></input>
+            <input placeholder="Password" id="registerPassword"></input>
+        </div>
+    </div>
+</main>
+    `
+    document.getElementById("register").addEventListener("click", registerFunction);
+}
 
 function loginFunction(event) {
     let username = document.getElementById("loginUsername").value;
@@ -12,7 +45,7 @@ function loginFunction(event) {
         body: JSON.stringify({ username: username, password: password, action: "login" })
     }).then(request => request.json()).then(resource => {
         if (resource.message === "Login successful!") {
-            window.location.href = "../homepage.html"
+            console.log("sucess");
         } else {
             console.log("login failed");
         }
