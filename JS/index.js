@@ -41,7 +41,7 @@ function loginFunction(event) {
     let password = document.getElementById("loginPassword").value;
     console.log(username);
 
-    fetch("../PHP/user_database.php", {
+    fetch("../PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: username, password: password, action: "login" })
@@ -59,7 +59,7 @@ function registerFunction(event) {
     let username = document.getElementById("registerUsername").value;
     let password = document.getElementById("registerPassword").value;
 
-    fetch("../PHP/user_database.php", {
+    fetch("../PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: username, password: password, action: "register" })
