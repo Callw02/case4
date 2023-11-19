@@ -5,8 +5,10 @@
         "level": 1,
         "popcorn": 0,
         "friends": 0,
-        "id": 1
-        
+        "id": 1,
+        "friendRequests": [
+            "www"
+        ]
     },
     {
         "username": "Wille",
