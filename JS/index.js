@@ -1,4 +1,4 @@
-
+document.getElementById("logister").addEventListener("click", loginFunction);
 document.getElementById("register").addEventListener("click", registerFunction);
 
 function loginFunction(event) {
