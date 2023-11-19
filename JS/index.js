@@ -1,7 +1,7 @@
 document.getElementById("SignIn").addEventListener("click", signInpage);
 document.getElementById("SignUp").addEventListener("click", signUppage);
 
-function signInpage(event){
+function signInpage(event) {
     document.querySelector("main").innerHTML = `
     <main>
         <h1>Filmfeud</h1>
@@ -18,7 +18,7 @@ function signInpage(event){
 
 }
 
-function signUppage(event){
+function signUppage(event) {
     document.querySelector("main").innerHTML = `
     <main>
     <h1>Filmfeud</h1>
@@ -28,10 +28,12 @@ function signUppage(event){
             <input placeholder="Username" id="registerUsername"></input>
             <input placeholder="Password" id="registerPassword"></input>
         </div>
+        <button id="loginShortCut">Go to login</button>
     </div>
 </main>
     `
     document.getElementById("register").addEventListener("click", registerFunction);
+    document.getElementById("loginShortCut").addEventListener("click", signInpage);
 }
 
 function loginFunction(event) {
