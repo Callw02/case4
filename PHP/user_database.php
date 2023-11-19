@@ -14,7 +14,7 @@ function sendJSON($message, $http_code = 200)
 
 $action = $received_data["action"];
 $username = $received_data["username"];
-$password = $received_data["password"];
+
 
 $filename = __DIR__."/../DATA/users.json";
 
@@ -25,7 +25,7 @@ if (file_exists($filename)) {
 }
 
 if($action === "register"){
-    
+    $password = $received_data["password"];
     $id = 0;
     if (0 <= count($users)) {
         $new_user = ["username" => $username, "password" => $password, "level" => 1, "popcorn" => 0, "friends" => 0];
@@ -44,7 +44,7 @@ if($action === "register"){
 
 if($action === "login"){
     $userFound = false;
-
+    $password = $received_data["password"];
     foreach($users as $user){
         if($username === $user["username"] && $password === $user["password"]){
             $message = ["userid" => $user["id"], "username" => $user["username"], "message" => "Login successful!"];

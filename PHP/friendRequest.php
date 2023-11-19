@@ -13,18 +13,20 @@ function sendJSON($message, $http_code = 200)
 
 $action = $received_data["action"];
 $username = $received_data["username"];
-$userRequest = $received_data["password"];
+$userRequest = $received_data["userToSearchFor"];
 
 $filename = __DIR__."/../DATA/users.json";
 $users = json_decode(file_get_contents($filename), true);
 
 if($action === "searchForUser"){
-    foreach($users as $user){
+    foreach($users as &$user){
         if($user["username"] === $userRequest){
             $user["friendRequests"] = $username;
         }
-        file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
     }
+    file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
+    $message = ["message" => "Success!"];
+    sendJSON($message, 200);
 }
 
 ?>

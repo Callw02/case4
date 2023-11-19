@@ -65,14 +65,18 @@ function RenderStartingpage() {
         <div id="profile">
             <div id="profilePic"></div>
             <p>TheMovieStar</p>
+            
         </div>
         <div id="containerLogo">
             <div class="unknown"></div>
             <div class="unknown"></div>
         </div>
+        <input id="searchBar"></input>
+        <button id="searchButton">Search</button>
     </header>
 </main>
     `
+    document.querySelector("#searchButton").addEventListener("click", searchUsers);
 }
 
 function registerFunction(event) {
