@@ -1,27 +1,31 @@
 "use strict";
 
-async function callAPI(request, enableErrorHandler){
+async function callAPI(request, enableErrorHandler, enableLoadingModal){
     
-    const loadingModal = document.createElement("div");
-    loadingModal.classList.add("loadingModal");
-    loadingModal.innerHTML = `
-        <div>
-            <span>Loading...</span>
-        </div>
-    `
-
-    document.querySelector("body").appendChild(loadingModal);
+    if(enableLoadingModal){
+        const loadingModal = document.createElement("div");
+        loadingModal.classList.add("loadingModal");
+        loadingModal.innerHTML = `
+            <div>
+                <span>Loading...</span>
+            </div>
+        `
+    
+        document.querySelector("body").appendChild(loadingModal);
+    
+    }
 
     const response = await fetch(request);
 
     if(!response.ok){
-        loadingModal.remove();
-        if(!enableErrorHandler){
-            return response;
-        }
+        if(enableLoadingModal){ loadingModal.remove(); }
+        
+        if(!enableErrorHandler){ return response; }
+
         errorHandler(response);
     }else{
-        loadingModal.remove();
+        if(enableLoadingModal){ loadingModal.remove(); }
+        
         return response;
     }
 
@@ -43,5 +47,5 @@ async function errorHandler(response){
     `
     errorModal.querySelector(".confirmButton").addEventListener("click", event => errorModal.remove());
     document.querySelector("main").append(errorModal);
-    
+
 }
