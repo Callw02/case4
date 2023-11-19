@@ -9,19 +9,12 @@
     },
     {
         "username": "Wille",
-        "password": "Sj\u00f6stedt",
-        "level": 1,
-        "popcorn": 0,
-        "friends": 0,
-        "id": 2
-    },
-    {
-        "username": "Wille",
         "password": "Sjostedt",
         "level": 1,
         "popcorn": 0,
         "friends": 0,
-        "id": 3
+        "id": 3,
+        "friendRequests": "callw"
     },
     {
         "username": "WWW",

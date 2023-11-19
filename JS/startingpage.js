@@ -52,4 +52,5 @@ function RenderStartingpage() {
     </div>
 </main>
     `
+    document.querySelector("#searchButton").addEventListener("click", searchUsers);
 }
