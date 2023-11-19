@@ -43,14 +43,18 @@ if($action === "register"){
 }
 
 if($action === "login"){
+    $userFound = false;
+
     foreach($users as $user){
         if($username === $user["username"] && $password === $user["password"]){
             $message = ["userid" => $user["id"], "username" => $user["username"], "message" => "Login successful!"];
+            $userFound = true;
             sendJSON($message, 200);
-        }else{
-            $message = ["message" => "User not found"];
-            sendJSON($message, 404);
         }
+    }
+    if (!$userFound) {
+        $message = ["message" => "User not found"];
+        sendJSON($message, 404);
     }
 }
 ?>

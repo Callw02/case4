@@ -3,7 +3,7 @@ document.getElementById("register").addEventListener("click", registerFunction);
 
 function loginFunction(event) {
     let username = document.getElementById("loginUsername").value;
-    let password = document.getElementById("registerPassword").value;
+    let password = document.getElementById("loginPassword").value;
     console.log(username);
 
     fetch("../PHP/user_database.php", {
