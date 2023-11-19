@@ -57,4 +57,13 @@ if($action === "login"){
         sendJSON($message, 404);
     }
 }
+
+if($action === "displayFriends"){
+    foreach ($users as $user) {
+        if($username === $user["username"]){
+            $message = ["friendRequests" => $user["friendRequests"]];
+            sendJSON($message, 200);
+        }
+    }
+}
 ?>

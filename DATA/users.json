@@ -22,7 +22,8 @@
         "level": 1,
         "popcorn": 0,
         "friends": 0,
-        "id": 4
+        "id": 4,
+        "friendRequests": "callw"
     },
     {
         "username": "vrev",

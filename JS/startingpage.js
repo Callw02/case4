@@ -53,4 +53,17 @@ function RenderStartingpage() {
 </main>
     `
     document.querySelector("#searchButton").addEventListener("click", searchUsers);
+    displayFriendRequests()
+}
+function displayFriendRequests(){
+    let requestBox = document.querySelector(".friendRequests");
+
+    fetch("../PHP/user_database.php", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ username: username, action: "displayFriends"})
+    }).then(r => r.json()).then(resource => {
+        console.log(resource);
+    })
+    
 }
