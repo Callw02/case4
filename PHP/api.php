@@ -32,7 +32,7 @@ switch($action){
         login($users, $received_data);
         break;
     case "displayFriends":
-        displayFriends($users);
+        displayFriends($users, $received_data);
         break;
     case "searchForUser";
         friendRequest($received_data);

@@ -29,6 +29,8 @@ function loginFunction(event) {
     }).then(request => request.json()).then(resource => {
         if (resource.message === "Login successful!") {
             console.log("sucess");
+            window.localStorage.setItem("username", username)
+            RenderStartingpage();
         } else {
             console.log("login failed");
         }

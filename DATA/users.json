@@ -62,5 +62,13 @@
         "popcorn": 0,
         "friends": 0,
         "id": 8
+    },
+    {
+        "username": "jjj",
+        "password": "jjj",
+        "level": 1,
+        "popcorn": 0,
+        "friends": 0,
+        "id": 9
     }
 ]
