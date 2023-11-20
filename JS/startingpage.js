@@ -58,7 +58,7 @@ function RenderStartingpage() {
 function displayFriendRequests(){
     let requestBox = document.querySelector(".friendRequests");
 
-    fetch("../PHP/user_database.php", {
+    fetch("../PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: username, action: "displayFriends"})
