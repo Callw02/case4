@@ -1,6 +1,6 @@
 "use strict";
 
-async function callAPI(request, enableErrorHandler, enableLoadingModal){
+async function callAPI(request, enableErrorHandler = true, enableLoadingModal = true){
     
     if(enableLoadingModal){
         const loadingModal = document.createElement("div");
