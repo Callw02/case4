@@ -4,7 +4,7 @@ console.log(localStorage.getItem("username"));
 let username = localStorage.getItem("username");
 function RenderStartingpage() {
     document.querySelector("main").innerHTML = `
-    <main>
+    <main id"startingpageContainer">
     <header id="menu">
 
         <div class="profile">
@@ -16,7 +16,7 @@ function RenderStartingpage() {
             <div class="friendRequests"></div>
             <div class="unknown"></div>
             <div class="Logo">
-                <img src="https://www.google.com/search?client=firefox-b-d&q=Cute+dog#vhid=pLBKx-usQwRH3M&vssid=l">
+                <img src="">
             </div>
         </div>
 
@@ -32,7 +32,7 @@ function RenderStartingpage() {
                 <div class="profile">
                     <div id="profilePic">
                         <img
-                            src="https://www.google.com/search?client=firefox-b-d&q=Cute+dog#vhid=pLBKx-usQwRH3M&vssid=l">
+                            src="">
                     </div>
                     <p>TheMovieStar</p>
                     <div id="levelProgressBar">Level</div>
@@ -56,18 +56,16 @@ function RenderStartingpage() {
     document.querySelector("#searchButton").addEventListener("click", searchUsers);
     displayFriendRequests()
 }
-
-function displayFriendRequests(){
+function displayFriendRequests() {
     let requestBox = document.querySelector(".friendRequests");
 
     fetch("../PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ username: username, action: "displayFriends"})
+        body: JSON.stringify({ username: username, action: "displayFriends" })
     }).then(r => r.json()).then(resource => {
         console.log(resource);
-        
-        for(let i = 0; i < resource.friendRequests.length;i++){
+        for (let i = 0; i < resource.friendRequests.length; i++) {
             let div = document.createElement("div");
             div.textContent = resource.friendRequests[i];
             requestBox.appendChild(div);
@@ -85,18 +83,18 @@ function displayFriendRequests(){
             button2.addEventListener("click", respondFriendRequest)
         }
     })
-    
+
 }
 
-function respondFriendRequest(event){
+function respondFriendRequest(event) {
     let user = event.target.previousElementSibling.textContent;
     let action;
-    if(event.target.id === "accept"){
+    if (event.target.id === "accept") {
         action = "accept"
-    }else{
+    } else {
         action = "decline"
     }
-    
+
     fetch("../PHP/friendRequest.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
