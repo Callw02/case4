@@ -5,12 +5,15 @@
         "level": 1,
         "popcorn": 0,
         "friends": 0,
-        "id": 1,
-        "friendRequests": [
-            "www",
-            "www",
-            "Wille"
-        ]
+        "id": 1
+    },
+    {
+        "username": "Wille",
+        "password": "Sj\u00f6stedt",
+        "level": 1,
+        "popcorn": 0,
+        "friends": 0,
+        "id": 2
     },
     {
         "username": "Wille",
@@ -18,8 +21,7 @@
         "level": 1,
         "popcorn": 0,
         "friends": 0,
-        "id": 3,
-        "friendRequests": "callw"
+        "id": 3
     },
     {
         "username": "WWW",
@@ -27,8 +29,7 @@
         "level": 1,
         "popcorn": 0,
         "friends": 0,
-        "id": 4,
-        "friendRequests": "callw"
+        "id": 4
     },
     {
         "username": "vrev",
@@ -44,15 +45,30 @@
         "level": 1,
         "popcorn": 0,
         "friends": 0,
-        "id": 6,
-        "friendRequests": "callw"
+        "id": 6
     },
     {
-        "username": "htrh",
-        "password": "hrhr",
+        "username": "hej",
+        "password": "hej",
         "level": 1,
         "popcorn": 0,
         "friends": 0,
         "id": 7
+    },
+    {
+        "username": "hejjj",
+        "password": "hejjj",
+        "level": 1,
+        "popcorn": 0,
+        "friends": 0,
+        "id": 8
+    },
+    {
+        "username": "jjj",
+        "password": "jjj",
+        "level": 1,
+        "popcorn": 0,
+        "friends": 0,
+        "id": 9
     }
 ]
