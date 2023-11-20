@@ -1,6 +1,7 @@
 "use strict"
 
-
+console.log(localStorage.getItem("username"));
+let username = localStorage.getItem("username");
 function RenderStartingpage() {
     document.querySelector("main").innerHTML = `
     <main>
@@ -55,6 +56,7 @@ function RenderStartingpage() {
     document.querySelector("#searchButton").addEventListener("click", searchUsers);
     displayFriendRequests()
 }
+
 function displayFriendRequests(){
     let requestBox = document.querySelector(".friendRequests");
 
@@ -64,11 +66,43 @@ function displayFriendRequests(){
         body: JSON.stringify({ username: username, action: "displayFriends"})
     }).then(r => r.json()).then(resource => {
         console.log(resource);
+        
         for(let i = 0; i < resource.friendRequests.length;i++){
             let div = document.createElement("div");
             div.textContent = resource.friendRequests[i];
             requestBox.appendChild(div);
+            let button = document.createElement("button");
+            button.textContent = "Accept!"
+            button.setAttribute("id", "accept")
+
+            let button2 = document.createElement("button");
+            button2.textContent = "Decilne!"
+            button2.setAttribute("id", "decline")
+            requestBox.appendChild(button);
+            requestBox.appendChild(button2);
+
+            button.addEventListener("click", respondFriendRequest)
+            button2.addEventListener("click", respondFriendRequest)
         }
     })
     
+}
+
+function respondFriendRequest(event){
+    let user = event.target.previousElementSibling.textContent;
+    let action;
+    if(event.target.id === "accept"){
+        action = "accept"
+    }else{
+        action = "decline"
+    }
+    
+    fetch("../PHP/friendRequest.php", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ username: window.localStorage.getItem("username"), requestedUser: user, action: action })
+    }).then(r => r.json()).then(resource => {
+        console.log(resource);
+    });
+
 }

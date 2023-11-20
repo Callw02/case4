@@ -1,6 +1,7 @@
-let username = localStorage.getItem("username");
+
 
 function searchUsers(event){
+    let username = localStorage.getItem("username");
     console.log(event);
     let searchedUser = document.querySelector("#searchBar").value;
     console.log(event);
