@@ -3,6 +3,8 @@
 require_once "functions.php";
 require_once "register.php";
 require_once "login.php";
+require_once "friendRequest.php";
+require_once "displayFriends.php";
 
 ini_set("display_errors", 1);
 
@@ -28,6 +30,12 @@ switch($action){
         break;
     case "login":
         login($users, $received_data);
+        break;
+    case "displayFriends":
+        displayFriends($users);
+        break;
+    case "searchForUser";
+        friendRequest($received_data);
         break;
 }
 

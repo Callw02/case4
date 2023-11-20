@@ -5,7 +5,7 @@ function searchUsers(event){
     let searchedUser = document.querySelector("#searchBar").value;
     console.log(event);
 
-    fetch("../PHP/friendRequest.php", {
+    fetch("../PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: username, userToSearchFor: searchedUser, action: "searchForUser" })
@@ -17,7 +17,7 @@ function searchUsers(event){
 function displayFriendRequests(){
     let requestBox = document.querySelector(".friendRequests");
 
-    fetch("../PHP/user_database.php", {
+    fetch("../PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ username: username, action: "displayFriends"})
