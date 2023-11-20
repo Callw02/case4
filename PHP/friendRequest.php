@@ -19,14 +19,6 @@ function friendRequest($received_data){
     }
 }
 $received_data = json_decode(file_get_contents("php://input"), true);
-function sendJSON($message, $http_code = 200)
-{
-    header("content-type: application/json");
-    http_response_code($http_code);
-    echo json_encode($message);
-    exit();
-}
-
 
 $action = $received_data["action"];
 $username = $received_data["username"];
