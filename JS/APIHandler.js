@@ -18,13 +18,19 @@ async function callAPI(request, enableErrorHandler = true, enableLoadingModal = 
     const response = await fetch(request);
 
     if(!response.ok){
-        if(enableLoadingModal){ loadingModal.remove(); }
+        if(enableLoadingModal){ 
+            loadingModal.remove(); 
+        }
         
-        if(!enableErrorHandler){ return response; }
+        if(!enableErrorHandler){ 
+            return response; 
+        }
 
         errorHandler(response);
     }else{
-        if(enableLoadingModal){ loadingModal.remove(); }
+        if(enableLoadingModal){ 
+            loadingModal.remove(); 
+        }
         
         return response;
     }
