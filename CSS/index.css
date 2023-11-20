@@ -21,7 +21,7 @@ main {
     flex-direction: column;
 }
 
-loginShortCut {
+#loginShortCut {
     width: 20px;
     height: 20px;
 }

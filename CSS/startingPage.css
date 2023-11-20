@@ -1,4 +1,9 @@
-.friendRequests{
-    height: 200px;
+.friendRequests {
+    height: 5px;
     width: 200px;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
 }
