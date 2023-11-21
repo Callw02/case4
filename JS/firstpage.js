@@ -1,6 +1,7 @@
 "use strict";
 
 function renderFirstPage(){
+
     document.querySelector("main").innerHTML = `
         <div id="container">
             <button id="SignIn">Sign in</button>
