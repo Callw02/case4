@@ -31,6 +31,7 @@ function loginFunction(event) {
             console.log("sucess");
             window.localStorage.setItem("username", username)
             RenderStartingpage();
+            initializeLeaderboard()
         } else {
             console.log("login failed");
         }
