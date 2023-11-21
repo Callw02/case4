@@ -20,14 +20,5 @@
         ],
         "friendRequests": [],
         "id": 2
-    },
-    {
-        "username": "cal",
-        "password": "cal",
-        "level": 1,
-        "popcorn": 0,
-        "friends": [],
-        "friendRequests": [],
-        "id": 3
     }
 ]
