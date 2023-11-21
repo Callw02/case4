@@ -1,9 +1,8 @@
 "use strict"
 
-
+console.log(localStorage.getItem("username"));
+let username = localStorage.getItem("username");
 function RenderStartingpage() {
-    console.log(localStorage.getItem("username"));
-    let username = localStorage.getItem("username");
     document.querySelector("main").innerHTML = `
     <main id"startingpageContainer">
     <header id="menu">
@@ -92,7 +91,7 @@ function displayFriendRequests() {
     fetch("../PHP/api.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ username: window.localStorage.getItem("username"), action: "displayFriends" })
+        body: JSON.stringify({ username: username, action: "displayFriends" })
     }).then(r => r.json()).then(resource => {
         console.log(resource);
         for (let i = 0; i < resource.friendRequests.length; i++) {
@@ -125,10 +124,10 @@ function respondFriendRequest(event) {
         action = "decline"
     }
 
-    fetch("../PHP/api.php", {
+    fetch("../PHP/friendRequest.php", {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ username: window.localStorage.getItem("username"), requestedUser: user, action: "friendRequest", subAction: action })
+        body: JSON.stringify({ username: window.localStorage.getItem("username"), requestedUser: user, action: action })
     }).then(r => r.json()).then(resource => {
         console.log(resource);
     });
