@@ -34,8 +34,8 @@ switch($action){
     case "displayFriends":
         displayFriends($users, $received_data);
         break;
-    case "searchForUser";
-        friendRequest($received_data);
+    case "friendRequest":
+        friendRequest($received_data, $users);
         break;
 }
 

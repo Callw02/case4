@@ -4,10 +4,10 @@
         "password": "111",
         "level": 1,
         "popcorn": 0,
-        "friends": [],
-        "friendRequests": [
+        "friends": [
             "222"
         ],
+        "friendRequests": [],
         "id": 1
     },
     {
@@ -15,7 +15,9 @@
         "password": "222",
         "level": 1,
         "popcorn": 0,
-        "friends": [],
+        "friends": [
+            "111"
+        ],
         "friendRequests": [],
         "id": 2
     }
